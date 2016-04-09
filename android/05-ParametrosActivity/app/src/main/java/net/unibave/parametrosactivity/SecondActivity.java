@@ -21,7 +21,7 @@ public class SecondActivity extends AppCompatActivity {
         etxIdade = (EditText) findViewById(R.id.etxIdade);
 
         Intent intent = getIntent();
-        if (intent != null) {
+        if (intent != null) { // activity foi iniciada pelo usuário
             String aluno = intent.getStringExtra(MainActivity.KEY);
             txtAluno.setText("Olá " + aluno + ". Qual sua idade?");
         }
