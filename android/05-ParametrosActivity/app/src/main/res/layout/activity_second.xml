@@ -8,23 +8,22 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="net.unibave.parametrosactivity.SecondActivity">
+    tools:context="unibave.net.parametrosactivity.SecondActivity">
 
     <TextView
-        android:id="@+id/txtAluno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:id="@+id/etxIdade"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
+        android:layout_height="wrap_content"
+        android:id="@+id/tviAluno"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etxIdade" />
     <Button
-        android:layout_gravity="center"
-        android:text="OK"
-        android:onClick="btnOkOnClick"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/fechar"
+        android:text="Fechar"
+        android:layout_gravity="center"
+        android:onClick="btnFecharOnClick"/>
 
 </LinearLayout>

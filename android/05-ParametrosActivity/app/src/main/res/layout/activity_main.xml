@@ -8,20 +8,21 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="net.unibave.parametrosactivity.MainActivity">
+    tools:context="unibave.net.parametrosactivity.MainActivity" >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Aluno:" />
     <EditText
-        android:id="@+id/etxAluno"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/etxAluno" />
     <Button
-        android:onClick="btnOkOnClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ok"
         android:text="OK"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:onClick="btnOKOnClick"/>
 </LinearLayout>
