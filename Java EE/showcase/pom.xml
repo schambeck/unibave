@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.unibave</groupId>
+  <artifactId>showcase</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>showcase</name>
+  <modules>
+    <module>showcase-ear</module>
+    <module>showcase-web</module>
+    <module>showcase-ejb</module>
+  </modules>
+  
+  <dependencyManagement>
+      <dependencies>
+        <dependency>
+          <groupId>com.querydsl</groupId>
+          <artifactId>querydsl-apt</artifactId>
+          <version>4.0.9</version>
+        </dependency>
+
+        <dependency>
+          <groupId>com.querydsl</groupId>
+          <artifactId>querydsl-jpa</artifactId>
+          <version>4.0.9</version>
+        </dependency>
+
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+          <version>1.6.1</version>
+        </dependency>
+      </dependencies>
+  </dependencyManagement>
+</project>
