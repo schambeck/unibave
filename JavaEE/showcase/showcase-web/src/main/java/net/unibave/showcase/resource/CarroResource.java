@@ -5,11 +5,12 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
@@ -20,20 +21,20 @@ import net.unibave.showcase.model.QCarro;
 import net.unibave.showcase.model.QCategoria;
 
 @Stateless
-@Consumes(MediaType.APPLICATION_JSON)
-@Produces(MediaType.APPLICATION_JSON)
 public class CarroResource {
     
-    @PersistenceContext(unitName = "showcasePU")
+    @Inject
     private EntityManager em;
+    
+    @PathParam("codigoCategoria")
+    private Long codigoCategoria;
 
     @GET
-    public Response findAll(@QueryParam("codigoCategoria") Long codigoCategoria, @QueryParam("nome") String nome) {
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response findAll(@QueryParam("nome") String nome) {
         JPAQueryFactory queryFactory = new JPAQueryFactory(em);
         List<Predicate> predicates = new ArrayList<>();
-        if (codigoCategoria != null) {
-            predicates.add(QCarro.carro.categoria.id.eq(codigoCategoria));
-        }
+         predicates.add(QCarro.carro.categoria.id.eq(codigoCategoria));
         if (nome != null) {
             predicates.add(QCarro.carro.nome.containsIgnoreCase(nome));
         }
@@ -45,6 +46,7 @@ public class CarroResource {
     }
     
     @GET
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("create")
     public Response create() {
         JPAQueryFactory queryFactory = new JPAQueryFactory(em);

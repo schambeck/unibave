@@ -1,0 +1,13 @@
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema">
+  <datasource jndi-name="java:jboss/datasources/showcaseDS" pool-name="showcaseDS">
+      <connection-url>jdbc:postgresql://localhost:5432/showcase</connection-url>
+      <driver>postgresql</driver>
+      <pool>
+          <max-pool-size>30</max-pool-size>
+      </pool>
+      <security>
+          <user-name>postgres</user-name>
+          <password>postgres</password>
+      </security>
+  </datasource>
+</datasources>
