@@ -2,9 +2,8 @@ package net.unibave.showcase.resource;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import java.util.List;
-import javax.ejb.Stateless;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.persistence.EntityManager;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -16,17 +15,19 @@ import javax.ws.rs.core.Response;
 import net.unibave.showcase.model.Categoria;
 import net.unibave.showcase.model.QCategoria;
 
-@Stateless
+@RequestScoped
 public class CategoriaResource {
 
     @Inject
-    private EntityManager em;
-    
+    private JPAQueryFactory queryFactory;
+
+    @Context
+    private ResourceContext context;
+        
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response findAll() {
-        JPAQueryFactory queryFactory = new JPAQueryFactory(em);
         List<Categoria> categorias = queryFactory.selectFrom(QCategoria.categoria)
                 .fetch();
 //        List<Categoria> categorias = em.createQuery("FROM Categoria c ORDER BY c.nome").getResultList();;
@@ -34,8 +35,8 @@ public class CategoriaResource {
     }
 
     @Path("{codigoCategoria}/carro")
-    public CarroResource carro(@Context ResourceContext context) {
-        return context.getResource(CarroResource.class);
+    public CarroCategoriaResource carro() {
+        return context.getResource(CarroCategoriaResource.class);
     }
     
 }

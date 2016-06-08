@@ -1,5 +1,6 @@
 package net.unibave.showcase.resource;
 
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.Default;
 import javax.enterprise.inject.Produces;
@@ -18,9 +19,9 @@ public class ModelProducer {
     @PersistenceContext(unitName = "showcasePU")
     private EntityManager em;
 
-//    @Produces
-//    public JPAQueryFactory createJPAQueryFactory() {
-//        return new JPAQueryFactory(em);
-//    }
+    @Produces
+    public JPAQueryFactory createJPAQueryFactory() {
+        return new JPAQueryFactory(em);
+    }
     
 }
