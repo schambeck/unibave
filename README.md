@@ -1,8 +1,7 @@
 # unibave
 Demonstrações das Aulas do Curso de Sistemas de Informações na Unibave
 
-Tópicos Android:
-- Activity;
-- Intent;
-- ListView;
-- Adapter;
+Disciplinas:
+- Computação Móvel;
+- Tópicos em Sistemas de Informação e Tecnologia;
+- Sistemas de Informação Cliente/Servidor;
