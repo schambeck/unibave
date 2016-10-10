@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exemplo Validação</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.12/angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body ng-app="meuApp" ng-controller="validacaoCtrl">
+        <h2>Exemplo Validação</h2>
+        <div class="alert alert-danger" role="alert" ng-show="(meuForm.usuario.$dirty && meuForm.usuario.$invalid) || (meuForm.email.$dirty && meuForm.email.$invalid)">
+            <span ng-show="meuForm.usuario.$dirty && meuForm.usuario.$invalid">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                <span>Usuário é obrigatório.</span><br>
+            </span>
+            
+            <span ng-show="meuForm.email.$dirty && meuForm.email.$error.required">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                <span>Email é obrigatório.</span><br>
+            </span>
+            
+            <span ng-show="meuForm.email.$error.email">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                <span>Email inválido.</span>
+            </span>
+        </div>
+        <form name="meuForm" novalidate>
+            <p>Usuário:<br>
+                <input type="text" name="usuario" ng-model="usuario" required>
+            </p>
+            <p>Email:<br>
+                <input type="email" name="email" ng-model="email" required>
+            </p>
+            <p>
+                <input type="submit" ng-disabled="!meuForm.usuario.$dirty || meuForm.usuario.$invalid || !meuForm.email.$dirty || meuForm.email.$invalid">
+            </p>
+        </form>
+        <script>
+            var app = angular.module('meuApp', []);
+            app.controller('validacaoCtrl', function ($scope) {
+            });
+        </script>
+    </body>
+</html>

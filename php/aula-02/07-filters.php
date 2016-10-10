@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exemplo Filters</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.12/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="meuApp" ng-controller="pessoaCtrl">
+            <p><input type="text" ng-model="pessoa.pais"></p>
+            <ul>
+                <li ng-repeat="x in pessoas| filter: pessoa | orderBy:'pais'">
+                    {{ (x.nome | uppercase) + ', ' + x.pais}}
+                </li>
+            </ul>
+        </div>
+        <script src="07-pessoa_controller.js"></script>
+    </body>
+</html>

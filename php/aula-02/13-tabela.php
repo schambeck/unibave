@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exemplo Tabela</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.12/angular.min.js"></script>
+        <style>
+            table, th , td  {
+                border: 1px solid grey;
+                border-collapse: collapse;
+                padding: 5px;
+            }
+            table tr:nth-child(odd)	{
+                background-color: #f1f1f1;
+            }
+            table tr:nth-child(even) {
+                background-color: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <div ng-app="meuApp" ng-controller="clientesCtrl"> 
+            <table>
+                <tr ng-repeat="x in clientes | orderBy : 'pais'">
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ x.nome }}</td>
+                    <td>{{ x.pais | uppercase }}</td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            var app = angular.module('meuApp', []);
+            app.controller('clientesCtrl', function ($scope, $http) {
+                $http.get("12-clientes.json")
+                        .success(function (response) {
+                            $scope.clientes = response.clientes;
+                        });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,89 @@
+{
+    "clientes": [
+        {
+            "nome": "João Santos",
+            "cidade": "Berlin",
+            "pais": "Germany"
+        },
+        {
+            "nome": "Fábio",
+            "cidade": "Luleå",
+            "pais": "Suíça"
+        },
+        {
+            "nome": "Centro comercial Moctezuma",
+            "cidade": "México D.F.",
+            "pais": "Mexico"
+        },
+        {
+            "nome": "Daniel",
+            "cidade": "Graz",
+            "pais": "Austria"
+        },
+        {
+            "nome": "FISSA Fabrica Inter. Salchichas S.A.",
+            "cidade": "Madrid",
+            "pais": "Spain"
+        },
+        {
+            "nome": "Galería del gastrónomo",
+            "cidade": "Barcelona",
+            "pais": "Espanha"
+        },
+        {
+            "nome": "Island Trading",
+            "cidade": "Cowes",
+            "pais": "UK"
+        },
+        {
+            "nome": "Königlich Essen",
+            "cidade": "Brandenburg",
+            "pais": "Alemanha"
+        },
+        {
+            "nome": "Laughing Bacchus Wine Cellars",
+            "cidade": "Vancouver",
+            "pais": "Canada"
+        },
+        {
+            "nome": "Magazzini Alimentari Riuniti",
+            "cidade": "Bergamo",
+            "pais": "Itália"
+        },
+        {
+            "nome": "North/South",
+            "cidade": "London",
+            "pais": "UK"
+        },
+        {
+            "nome": "Paris spécialités",
+            "cidade": "Paris",
+            "pais": "França"
+        },
+        {
+            "nome": "Rattlesnake Canyon Grocery",
+            "cidade": "Albuquerque",
+            "pais": "EUA"
+        },
+        {
+            "nome": "Simons bistro",
+            "cidade": "København",
+            "pais": "Dinamarca"
+        },
+        {
+            "nome": "The Big Cheese",
+            "cidade": "Portland",
+            "pais": "EUA"
+        },
+        {
+            "nome": "Vaffeljernet",
+            "cidade": "Århus",
+            "pais": "Dinamarca"
+        },
+        {
+            "nome": "Wolski Zajazd",
+            "cidade": "Warszawa",
+            "pais": "Polônia"
+        }
+    ]
+}
