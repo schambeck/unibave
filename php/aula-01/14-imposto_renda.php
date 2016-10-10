@@ -5,7 +5,7 @@
         <title></title>
     </head>
     <body>
-<form action="14-acao.php" method="post">
+<form action="14-imposto_renda_acao.php" method="post">
     <p>Salário: <input type="text" name="salario" /></p>
     <p><input type="submit" /></p>
 </form>
