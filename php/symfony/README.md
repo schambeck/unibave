@@ -10,7 +10,7 @@ Passos para instalação:
 - Symfony > Run Command > run
 
 Abrir no navegador:
-http://localhost:8000/produto.php
+- http://localhost:8000/produto.php
 
 Métodos REST:
 - GET http://localhost:8000/rest/produtos
