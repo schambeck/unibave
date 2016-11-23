@@ -7,7 +7,7 @@ Tópicos symfony:
 
 Passos para instalação:
 - Composer > Install (dev)
-- Symfony > Run Command > run
+- Symfony > Run Command > server:run
 
 Abrir no navegador:
 - http://localhost:8000/produto.php
